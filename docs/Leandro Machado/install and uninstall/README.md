@@ -11,7 +11,8 @@
 | sudo mv /var/www/html/althash-web-platform/.[!.]* /var/www/html/ | Will move all hidden files (except the UNIX folders . and ..) to Apache/Nginx folder |
 | cd /var/www/html | Will enter in the folder of Apache/Nginx |
 | sudo npm install | Will install the packages |
-| sudo npm run build | Will build the node |
+
+Just use the script opening the address of your server like: http://yourserver/dist
 
 **To uninstall**
 
