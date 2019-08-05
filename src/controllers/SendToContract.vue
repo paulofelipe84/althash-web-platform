@@ -45,10 +45,10 @@
         </template>
         <template v-if="params">
           <v-text-field
-            v-for="(payable, index) in params"
-            :label="param.name"
-            :key="index"
-            v-model="inputParams[index]"
+            v-for="(param, payable) in params"
+            :label="payable"
+            :key="payable"
+            v-model="inputParams[payable]"
             outline
             background-color="blue lighten-1"
           ></v-text-field>
