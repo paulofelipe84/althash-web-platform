@@ -43,6 +43,16 @@
             background-color="blue lighten-1"
           ></v-text-field>
         </template>
+        <v-select
+          v-if="parsedAbi"
+          :items="parsedAbi"
+          label="Payable"
+          v-model="payable"
+          outline
+          background-color="blue lighten-1"
+          single-line
+          bottom
+        ></v-select>
         <template v-if="params">
           <v-text-field
             v-for="(payable, true) in params"
