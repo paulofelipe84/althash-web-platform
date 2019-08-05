@@ -12,7 +12,8 @@
 | sudo npm install | Will install the packages |
 | sudo npm run build | Will build the node |
 
-**To install**
+**To uninstall**
+
 | Command | Description |
 | --- | --- |
 | cd /var/www/html | Will enter in the folder of Apache/Nginx |
