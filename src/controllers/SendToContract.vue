@@ -45,7 +45,7 @@
         </template>
         <template v-if="params">
           <v-text-field
-            v-for="(param, payable) in params"
+            v-for="(payable, true) in params"
             :label="payable"
             :key="payable"
             v-model="inputParams[payable]"
