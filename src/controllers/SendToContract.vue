@@ -43,22 +43,12 @@
             background-color="blue lighten-1"
           ></v-text-field>
         </template>
-        <v-select
-          v-if="parsedAbi"
-          :items="parsedAbi"
-          label="Payable"
-          v-model="payable"
-          outline
-          background-color="blue lighten-1"
-          single-line
-          bottom
-        ></v-select>
-        <template v-if="params">
+		 <template v-if="params">
           <v-text-field
-            v-for="(payable, true) in params"
-            :label="payable"
-            :key="payable"
-            v-model="inputParams[payable]"
+            v-for="(param, index) in params"
+            :label="param.name"
+            :key="index"
+            v-model="inputParams[index]"
             outline
             background-color="blue lighten-1"
           ></v-text-field>
@@ -179,7 +169,7 @@ export default {
     },
     async send() {
       try {
-  const encodedData = abi.encodeMethod(this.parsedAbi[this.method].info, this.inputParams).substr(2)
+	const encodedData = abi.encodeMethod(this.parsedAbi[this.method].info, this.inputParams).substr(2)
         this.confirmSendDialog = true
         try {
           this.rawTx = await webWallet.getWallet().generateSendToContractTx(this.contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee)
@@ -192,7 +182,7 @@ export default {
         this.canSend = true
       } catch (e) {
         this.$root.error('Params error')
-  alert(e.message || e)
+	alert(e.message || e)
         this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e)
         this.confirmSendDialog = false
         return false
