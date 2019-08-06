@@ -45,7 +45,7 @@
         </template>
         <v-text-field
           label="Amount"
-          v-model.trim="fee"
+          v-model.trim="amountContract"
           outline
           background-color="indigo darken-4"
           required
@@ -118,6 +118,7 @@ export default {
       parsedAbi: null,
       method: null,
       inputParams: [],
+      amountContract: '0.001',
       gasPrice: '40',
       gasLimit: '2500000',
       fee: '0.01',
