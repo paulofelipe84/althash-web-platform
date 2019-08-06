@@ -44,13 +44,6 @@
           ></v-text-field>
         </template>
         <v-text-field
-          label="Amount"
-          v-model.trim="amountContract"
-          outline
-          background-color="indigo darken-4"
-          required
-        ></v-text-field>
-        <v-text-field
           label="Gas Price (1e-8 HTML/gas)"
           v-model.trim="gasPrice"
           outline
@@ -66,6 +59,13 @@
         ></v-text-field>
         <v-text-field
           label="Fee"
+          v-model.trim="fee"
+          outline
+          background-color="indigo darken-4"
+          required
+          ></v-text-field>
+         <v-text-field
+          label="Amount"
           v-model.trim="fee"
           outline
           background-color="indigo darken-4"
