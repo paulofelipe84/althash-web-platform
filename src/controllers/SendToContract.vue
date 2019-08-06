@@ -66,7 +66,7 @@
           ></v-text-field>
          <v-text-field
           label="Amount"
-          v-model.trim="fee"
+          v-model.trim="amountContract"
           outline
           background-color="indigo darken-4"
           required
@@ -170,7 +170,7 @@ export default {
   const encodedData = abi.encodeMethod(this.parsedAbi[this.method].info, this.inputParams).substr(2)
         this.confirmSendDialog = true
         try {
-          this.rawTx = await webWallet.getWallet().generateSendToContractTx(this.contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee)
+          this.rawTx = await webWallet.getWallet().generateSendToContractTx(this.contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee, this.amountContract)
         } catch (e) {
           this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e)
           alert(e.message || e)
