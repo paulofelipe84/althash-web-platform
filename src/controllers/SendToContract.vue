@@ -45,7 +45,7 @@
         </template>
         <v-text-field
           label="Amount"
-          v-model.trim="amount"
+          v-model.trim="gasPrice"
           outline
           background-color="indigo darken-4"
           required
